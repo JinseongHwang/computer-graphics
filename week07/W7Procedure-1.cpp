@@ -77,6 +77,8 @@ void MyInit() {
 	glEnable(GL_LIGHTING);		//조명 활성화
 	glEnable(GL_LIGHT0);		//0번 광원 활성화
 	glEnable(GL_LIGHT1);		//1번 광원 활성화
+	glEnable(GL_LIGHT2); // 2번 광원 활성화
+	glEnable(GL_LIGHT3); // 3번 광원 활성화
 
 }
 void MySpecial(int key, int x, int y) {
