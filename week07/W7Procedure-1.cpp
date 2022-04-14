@@ -16,6 +16,8 @@ const GLfloat light_pos[] = { 0.0, 0.0, 0.0, 1.0 };
 int sceneIdx = 0;
 int arrowIdx0 = 0;
 int arrowIdx1 = 0;
+const GLfloat emBlue[] = {0, 0, 1, 1};
+const GLfloat emZero[] = {0, 0, 0, 0};
 void MyInit() {
 	GLfloat Light1_Ambient[] = { 0.3,  0.3,  0.3, 1.0 };	//1번 광원 특성
 	GLfloat Light1_Diffuse[] = { 0.3, 0.3, 0.3, 1.0 };
@@ -119,6 +121,12 @@ void MyDisplay() {
 	{
 		for(int j = 0; j < 5; j++)
 		{
+			if (i == j) {
+				glMaterialfv(GL_FRONT, GL_EMISSION, emBlue);
+			}
+			else {
+				glMaterialfv(GL_FRONT, GL_EMISSION, emZero);
+			}
 			glPushMatrix();
 			glTranslatef(-0.3 + sin(PI * 2.0 * double(sceneIdx) / 300.0), 0, 0);
 			glTranslatef(-0.5 + i * 0.3, -0.5 + j * 0.3, 0.0);
